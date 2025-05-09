@@ -1,96 +1,57 @@
-Kütüphane Otomasyon Sistemi
+# 📚 Kütüphane Otomasyon Sistemi
 
-Bu projede, C programlama dili kullanılarak basit bir kütüphane otomasyon sistemi geliştirilmiştir. Sistem, kitapların ve kullanıcıların bilgilerini tutarak kitap ekleme, silme, güncelleme, ödünç alma ve iade etme gibi işlevleri sunar. Konsol tabanlı bu uygulama sayesinde kullanıcı dostu bir kitap yönetim deneyimi hedeflenmiştir.
+Bu proje, C programlama dili ile geliştirilmiş basit bir kütüphane otomasyon sistemidir. Konsol üzerinden çalışan bu sistem, kullanıcıların kitap bilgilerini yönetmelerini sağlar.
 
-İçerik
+## 🚀 Özellikler
 
-Projenin Amacı
+- Kitap ekleme, listeleme, arama, silme ve güncelleme
+- Kullanıcı girişi (kullanıcı adı ve şifre kontrolü)
+- Kitapların mevcut durumu hakkında bilgi sunar
 
-Kullanılan Veri Yapıları
+## 🛠️ Kurulum ve Çalıştırma
 
-Fonksiyonlar
+1. Proje dosyasını indirin veya klonlayın:
+   ```bash
+   git clone https://github.com/kasm45/kutuphane_otomasyon.git
+   cd kutuphane_otomasyon
+   ```
 
-Nasıl Derlenir ve Çalıştırılır
+2. Derleyip çalıştırın:
+   ```bash
+   gcc kutuphaneotomasyon.c -o kutuphaneotomasyon
+   ./kutuphaneotomasyon
+   ```
 
-Geliştirme Fikirleri
+## 📌 Kullanım Örneği (Konsol Çıktısı)
 
-Projenin Amacı
+```
+--- Kütüphane Otomasyon Sistemine Hoşgeldiniz ---
+Kullanıcı Adı: admin
+Şifre: ****
 
-Bu projenin temel amacı, bir kütüphanede bulunan kitapların ve kullanıcıların bilgilerini bir dizide tutarak, bu veriler üzerinde işlemler yapabilen bir sistem oluşturmaktır. Proje sayesinde C dilinde diziler, yapılar, fonksiyonlar, bellek yönetimi ve kontrol yapıları gibi temel kavramları uygulamalı olarak pekleştirme fırsatı bulunur.
+1. Kitap Ekle
+2. Kitap Listele
+3. Kitap Ara
+4. Kitap Sil
+5. Kitap Güncelle
+6. Çıkış
+Seçiminiz: 
+```
 
-Kullanılan Veri Yapıları
+## 🧱 Teknik Bilgiler
 
-Kitaplar yapısı:
+- **Programlama Dili**: C
+- **Derleyici**: GCC
+- **Veri Saklama**: Statik diziler (dynamic memory kullanılabilir şekilde genişletilebilir)
+- **Güvenlik**: Giriş işlemi (şifre kontrolü), temel input doğrulaması
 
-typedef struct {
-    char kitapAdi[100];
-    char yazarAdi[100];
-    int sayfaSayisi;
-    char ISBNno[15];
-    bool KitapDurum; // 0: Müsait, 1: Odunc Alınmış
-} Kitaplar;
+## 💡 Geliştirme Fikirleri
 
-Kullanici yapısı:
+- Kitap bilgilerini dosyada saklama
+- Kullanıcı ve admin rolleri ayırma
+- Dinamik bellek yönetimi (malloc/free)
+- Tarih/saat takibi ile ödünç alma sistemi
 
-typedef struct {
-    char kullaniciAdi[50];
-    char kullaniciSoyadi[50];
-    char email[20];
-    char telefon[11];
-    char sifre[20];
-    char AlinanKitapAdi[100];
-} Kullanici;
+## 📄 Lisans
 
-Fonksiyonlar
-
-Kullanıcı Menüsü
-
-KullaniciAnaMenu() : Sisteme giriş, kayıt ve çıkış seçeneklerini sunar.
-
-KullaniciEkle() : Yeni kullanıcı eklenmesini sağlar.
-
-KullaniciKontrol() : Kullanıcı giriş bilgilerinin doğruluğunu kontrol eder.
-
-Kitap Menüsü
-
-AnaMenu() : Kitap işlemleri için ana menüyü gösterir.
-
-KitapEkle() : Yeni kitap ekler.
-
-KitapListele() : Tüm kitapları listeler.
-
-KitapAra() : Belirli bir kitabı isme göre arar.
-
-KitapSil() : Belirtilen kitabı listeden siler.
-
-KitapGuncelle() : Mevcut bir kitabın bilgilerini günceller.
-
-KitapOduncAl() : Seçilen kitabı odunc verir.
-
-KitapIadeEt() : Odunc alınan kitabı iade eder.
-
-Nasıl Derlenir ve Çalıştırılır
-
-Kodu bir dosyaya kaydedin, örneğin: kutuphane.c
-
-Terminal veya komut satırından şu komutu kullanarak derleyin:
-
-gcc kutuphane.c -o kutuphane -lm
-
-Ardından uygulamayı çalıştırın:
-
-./kutuphane
-
-Geliştirme Fikirleri
-
-Verilerin dosyaya kaydedilmesi ve program kapansa bile korunması.
-
-Daha güçlü şifreleme ve kimlik doğrulama sistemleri.
-
-Arayüz için grafiksel uygulama (GTK, Qt vb.) geliştirilmesi.
-
-Arama fonksiyonunun yazar adı, ISBN veya sayfa sayısı gibi farklı kritere göre genişletilmesi.
-
-Kitaplara kategori etiketi eklenmesi ve filtreleme seçenekleri.
-
-Bu proje bireysel olarak geliştirilmiştir ve eğitim amaçlıdır. Katkıda bulunmak isteyenler için geliştirilmeye açıktır.
+Bu proje MIT lisansı ile lisanslanmıştır.
